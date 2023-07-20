@@ -1,73 +1,112 @@
-import React, { useState } from 'react'
-import { Text, TouchableOpacity, View, StyleSheet, Image } from 'react-native'
-import { Fab } from '../components/Fab';
+import React, {useState} from 'react';
+import {
+  Text,
+  TouchableOpacity,
+  View,
+  StyleSheet,
+  Image,
+  Button,
+  Dimensions,
+  ImageBackground,
+} from 'react-native';
+import {Fab} from '../components/Fab';
+
+const {width, height} = Dimensions.get('window');
 
 export const ContadorScreen = () => {
-    const [contador, setContador] = useState(10);
-    return (
-        
-        <View style={style.container}>
-            <Image
-        source={require('../assets/img/shipibo-fondo.jpg')} style={{width:'100%',height:'100%', marginTop:-120, position:'absolute',opacity:0.6}} resizeMode="cover"/>
-            <Text style={style.title}>
-                Diccionario Jurídico
-            </Text>
-            <Text style={style.title2}>
-                Corte Superiro de Justicia de Ucayali
-            </Text>
-            <Text style={style.title3}>
-                Dr. Tullio Bermeo Turchi
-            </Text>
-            <Text style={style.title3}>
-                Presidente
-            </Text>
-            <Text style={style.title3}>
-                Gestión 2023-2024
-            </Text>
-            <Fab/>
-            {/*<TouchableOpacity style={style.fabLocation} onPress={() => setContador(contador + 1)}>
-                <View style={style.fab1}>
-                    <Text style={style.fabText}>img</Text>
-                </View>
-            </TouchableOpacity>*/}
-        </View>
-    )
-
-}
-
+  //const [contador, setContador] = useState(10);
+  return (
+    <View style={style.container}>
+      <ImageBackground
+        source={require('../assets/img/shipibo-fondo.jpg')}
+        style={{
+            position:'absolute',
+            width,
+            height
+        }}
+        resizeMode='cover'
+      />
+      <View style={style.containerTitle}>
+        <Text style={style.title}>Diccionario Jurídico</Text>
+        <Text style={style.subTitle}>
+          Corte Superior de Justicia de Ucayali
+        </Text>
+      </View>
+      <View style={style.containerBtn}>
+        <TouchableOpacity activeOpacity={0.7} style={style.btnDiccionario}>
+          <Image
+            source={require('../assets/img/diccionario.png')}
+            style={style.iconoBtn}
+          />
+        </TouchableOpacity>
+      </View>
+      <View style={style.containerFooter}>
+        <Text style={style.title3}>Dr. Tullio Bermeo Turchi</Text>
+        <Text style={style.title3}>Presidente</Text>
+        <Text style={style.title3}>Gestión 2023-2024</Text>
+      </View>
+    </View>
+  );
+};
 
 const style = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        backgroundColor:'white'
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+  },
+  containerTitle: {
+    width,
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: 100,
+    marginTop: 60,
+  },
+  title: {
+    fontSize: 25,
+    marginBottom: 5,
+    fontFamily: 'Roboto-Bold',
+    color:'black'
+  },
+  subTitle: {
+    fontSize: 15,
+    color:'black'
+  },
+  containerBtn: {
+    marginTop: 30,
+    width,
+    height: (height * 40) / 100,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  btnDiccionario: {
+    backgroundColor: 'blue',
+    width: 150,
+    height: 150,
+    borderRadius: 100,
+    justifyContent: 'center',
+    alignItems: 'center',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 5,
     },
-    title: {
-        textAlign: 'center',
-        fontSize: 50,
-        fontWeight: 'bold',
-        color:'black',
-        top: -100
-    },
-    title2:{
-        textAlign: 'center',
-        fontSize: 20,
-        color:'#B60000',
-        fontWeight: 'bold',
-        top: -95
-    },
-    title3:{
-        textAlign: 'center',
-        fontSize: 17,
-        color:'black',
-        fontWeight:'bold',
-        top: 190
-    },
-    fab:{
-        backgroundColor:'#444444',
-        width: 60,
-        height: 60,
-        borderRadius: 100,
-        justifyContent: 'center'
-    }
-  })
+    shadowOpacity: 0.34,
+    shadowRadius: 6.27,
+
+    elevation: 10,
+  },
+  iconoBtn: {
+    width: '50%',
+    height: '50%',
+  },
+  containerFooter: {
+    marginTop:40,
+    justifyContent:'center',
+    alignItems:'center'
+  },
+  title3: {
+    color:'black'
+  },
+  fab: {},
+});
