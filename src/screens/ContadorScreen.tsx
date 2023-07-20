@@ -8,8 +8,10 @@ import {
   Button,
   Dimensions,
   ImageBackground,
+  ScrollView
 } from 'react-native';
 import {Fab} from '../components/Fab';
+import BtnPrueba from '../components/BtnPrueba';
 
 const {width, height} = Dimensions.get('window');
 
@@ -33,13 +35,31 @@ export const ContadorScreen = () => {
         </Text>
       </View>
       <View style={style.containerBtn}>
-        <TouchableOpacity activeOpacity={0.7} style={style.btnDiccionario}>
-          <Image
-            source={require('../assets/img/diccionario.png')}
-            style={style.iconoBtn}
-          />
-        </TouchableOpacity>
+        <BtnPrueba onPress={()=>console.log('Hola mnundo')} />
       </View>
+     {/* <ScrollView>
+     
+      <View style={style.containerBtn}>
+        <BtnPrueba onPress={()=>console.log('Hola mnundo')} abecedario='A' shipibo='Juane'/>
+        <BtnPrueba onPress={()=>console.log('Hola mnundo')} abecedario='B' shipibo='Juane'/>
+      </View>
+      <View style={style.containerBtn}>
+        <BtnPrueba onPress={()=>console.log('Hola mnundo')} abecedario='C' shipibo='Juane'/>
+        <BtnPrueba onPress={()=>console.log('Hola mnundo')} abecedario='D' shipibo='Juane'/>
+      </View>
+      <View style={style.containerBtn}>
+        <BtnPrueba onPress={()=>console.log('Hola mnundo')} abecedario='E' shipibo='Juane'/>
+        <BtnPrueba onPress={()=>console.log('Hola mnundo')} abecedario='F' shipibo='Juane'/>
+      </View>
+      <View style={style.containerBtn}>
+        <BtnPrueba onPress={()=>console.log('Hola mnundo')} abecedario='C' shipibo='Juane'/>
+        <BtnPrueba onPress={()=>console.log('Hola mnundo')} abecedario='D' shipibo='Juane'/>
+      </View>
+      <View style={style.containerBtn}>
+        <BtnPrueba onPress={()=>console.log('Hola mnundo')} abecedario='E' shipibo='Juane'/>
+        <BtnPrueba onPress={()=>console.log('Hola mnundo')} abecedario='F' shipibo='Juane'/>
+      </View>
+     </ScrollView> */}
       <View style={style.containerFooter}>
         <Text style={style.title3}>Dr. Tullio Bermeo Turchi</Text>
         <Text style={style.title3}>Presidente</Text>
@@ -74,8 +94,10 @@ const style = StyleSheet.create({
   },
   containerBtn: {
     marginTop: 30,
+    //backgroundColor:'red',
     width,
     height: (height * 40) / 100,
+    //flexDirection:'row',
     justifyContent: 'center',
     alignItems: 'center',
   },
