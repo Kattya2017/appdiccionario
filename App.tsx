@@ -1,12 +1,16 @@
+import 'react-native-gesture-handler';
 import React from 'react';
-import { ContadorScreen } from './src/screens/ContadorScreen';
-//import { HolaMundoScreen } from './src/screens/HolaMundoScreen';
+
+import { NavigationContainer } from '@react-navigation/native';
+import StackNavigator from './src/navigator/StackNavigator';
 
 const App = () => {
   return (
-    //<HolaMundoScreen/>
-    <ContadorScreen/>
-   
+
+   <NavigationContainer>
+    <StackNavigator/>
+   </NavigationContainer>
+
   )
 }
 

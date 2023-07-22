@@ -1,29 +1,23 @@
 import React from 'react'
-import { Image, TouchableOpacity, StyleSheet, Text } from 'react-native';
+
+import { Image, StyleSheet, Text, TouchableOpacity } from 'react-native';
 
 interface Props{
-    abecedario?:string,
-    shipibo?:string,
+    palabrita?:string,
     onPress?:()=>void
 }
 
-const BtnPrueba = ({abecedario,onPress,shipibo}:Props) => {
+const BtnLetra = ({palabrita, onPress}:Props) =>{
 
-    let constante;
-    let shipi;
-    if (abecedario) {
-        constante = <Text style={{color:'black', fontSize:20, fontFamily:'AkazanRg Bold', marginTop:5}}>{abecedario}</Text>
-    }else{
-        constante
-    }
+let palabra;
 
-    if (shipibo) {
-        shipi = <Text style={{color:'black',fontSize:20, fontFamily:'AkazanRg Bold'}}>{shipibo}</Text>
-    }else{
-        shipi
-    }
+if (palabrita) {
+    palabra = <Text style={{color:'black', fontSize:20, fontFamily:'AkazanRg Bold', marginTop:5}}>{palabrita}</Text>
+}else{
+    palabra
+}
 
-  return (
+return (
     <TouchableOpacity 
         activeOpacity={0.7} 
         style={style.btnDiccionario}
@@ -32,13 +26,12 @@ const BtnPrueba = ({abecedario,onPress,shipibo}:Props) => {
             source={require('../assets/img/libro.png')}
             style={style.iconoBtn}
           />
-          {constante}
-          {shipi}
+          {palabrita}
     </TouchableOpacity>
-  )
+)
 }
 
-export default BtnPrueba;
+export default BtnLetra;
 
 const style = StyleSheet.create({
     btnDiccionario: {
@@ -61,7 +54,7 @@ const style = StyleSheet.create({
         elevation: 10,
         marginRight:10
       },
-      iconoBtn: {
+    iconoBtn: {
         width: '40%',
         height: '40%',
       },

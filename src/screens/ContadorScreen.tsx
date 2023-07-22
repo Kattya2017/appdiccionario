@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import {
   Text,
   TouchableOpacity,
@@ -10,56 +10,44 @@ import {
   ImageBackground,
   ScrollView
 } from 'react-native';
-import {Fab} from '../components/Fab';
 import BtnPrueba from '../components/BtnPrueba';
+import { StackScreenProps } from '@react-navigation/stack';
 
-const {width, height} = Dimensions.get('window');
+const { width, height } = Dimensions.get('window');
 
-export const ContadorScreen = () => {
-  //const [contador, setContador] = useState(10);
+
+interface Props extends StackScreenProps<any, any>{};
+
+export const ContadorScreen = ({navigation}:any) => {
   return (
     <View style={style.container}>
       <ImageBackground
-        source={require('../assets/img/shipibo-fondo.jpg')}
+        source={require('../assets/img/fondo-verde-2.png')}
         style={{
-            position:'absolute',
-            width,
-            height
+          position: 'absolute',
+          width,
+          height
         }}
         resizeMode='cover'
       />
       <View style={style.containerTitle}>
-        <Text style={style.title}>Diccionario Jurídico</Text>
         <Text style={style.subTitle}>
           Corte Superior de Justicia de Ucayali
         </Text>
+        <Text style={style.title}>DICCIONARIO</Text>
+        <Text style={style.title}>JURÍDICO</Text>
       </View>
+      
       <View style={style.containerBtn}>
-        <BtnPrueba onPress={()=>console.log('Hola mnundo')} />
+      <TouchableOpacity 
+        activeOpacity={0.7} 
+        style={style.btnDiccionario} onPress={()=>navigation.navigate('HolaMundoScreen')}>
+          <Image
+            source={require('../assets/img/diccionario2.png')}
+            style={style.iconoBtn}
+          /> 
+    </TouchableOpacity>
       </View>
-     {/* <ScrollView>
-     
-      <View style={style.containerBtn}>
-        <BtnPrueba onPress={()=>console.log('Hola mnundo')} abecedario='A' shipibo='Juane'/>
-        <BtnPrueba onPress={()=>console.log('Hola mnundo')} abecedario='B' shipibo='Juane'/>
-      </View>
-      <View style={style.containerBtn}>
-        <BtnPrueba onPress={()=>console.log('Hola mnundo')} abecedario='C' shipibo='Juane'/>
-        <BtnPrueba onPress={()=>console.log('Hola mnundo')} abecedario='D' shipibo='Juane'/>
-      </View>
-      <View style={style.containerBtn}>
-        <BtnPrueba onPress={()=>console.log('Hola mnundo')} abecedario='E' shipibo='Juane'/>
-        <BtnPrueba onPress={()=>console.log('Hola mnundo')} abecedario='F' shipibo='Juane'/>
-      </View>
-      <View style={style.containerBtn}>
-        <BtnPrueba onPress={()=>console.log('Hola mnundo')} abecedario='C' shipibo='Juane'/>
-        <BtnPrueba onPress={()=>console.log('Hola mnundo')} abecedario='D' shipibo='Juane'/>
-      </View>
-      <View style={style.containerBtn}>
-        <BtnPrueba onPress={()=>console.log('Hola mnundo')} abecedario='E' shipibo='Juane'/>
-        <BtnPrueba onPress={()=>console.log('Hola mnundo')} abecedario='F' shipibo='Juane'/>
-      </View>
-     </ScrollView> */}
       <View style={style.containerFooter}>
         <Text style={style.title3}>Dr. Tullio Bermeo Turchi</Text>
         <Text style={style.title3}>Presidente</Text>
@@ -81,16 +69,19 @@ const style = StyleSheet.create({
     alignItems: 'center',
     height: 100,
     marginTop: 60,
+    top:120
   },
   title: {
-    fontSize: 25,
-    marginBottom: 5,
-    fontFamily: 'Roboto-Bold',
-    color:'black'
+    fontSize: 55,
+    marginBottom: 2,
+    fontFamily: 'AkazanRg Bold',
+    color: '#006605'
   },
   subTitle: {
-    fontSize: 15,
-    color:'black'
+    fontSize: 20,
+    marginBottom:5,
+    color: 'black',
+    fontFamily: 'AkazanRg Regular'
   },
   containerBtn: {
     marginTop: 30,
@@ -100,11 +91,14 @@ const style = StyleSheet.create({
     //flexDirection:'row',
     justifyContent: 'center',
     alignItems: 'center',
+    top:180
   },
   btnDiccionario: {
-    backgroundColor: 'blue',
-    width: 150,
-    height: 150,
+    backgroundColor: '#fff',
+    borderColor:'#059A32',
+    borderWidth:2,
+    width: 100,
+    height: 100,
     borderRadius: 100,
     justifyContent: 'center',
     alignItems: 'center',
@@ -119,16 +113,19 @@ const style = StyleSheet.create({
     elevation: 10,
   },
   iconoBtn: {
-    width: '50%',
-    height: '50%',
+    width: '80%',
+    height: '80%',
   },
   containerFooter: {
-    marginTop:40,
-    justifyContent:'center',
-    alignItems:'center'
+    marginTop: 40,
+    justifyContent: 'center',
+    alignItems: 'center',
+    top:100
   },
   title3: {
-    color:'black'
+    color: 'black',
+    fontSize:20,
+    fontFamily: 'AkazanRg Regular'
   },
   fab: {},
 });
