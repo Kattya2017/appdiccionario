@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Text,
   TouchableOpacity,
@@ -18,11 +18,12 @@ const { width, height } = Dimensions.get('window');
 
 interface Props extends StackScreenProps<any, any>{};
 
-export const ContadorScreen = ({navigation}:any) => {
+export const HomeScreen = ({navigation}:Props) => {
+
   return (
     <View style={style.container}>
       <ImageBackground
-        source={require('../assets/img/fondo-verde-2.png')}
+        source={require('../assets/img/portada1.png')}
         style={{
           position: 'absolute',
           width,
@@ -36,12 +37,15 @@ export const ContadorScreen = ({navigation}:any) => {
         </Text>
         <Text style={style.title}>DICCIONARIO</Text>
         <Text style={style.title}>JURÍDICO</Text>
+        <Text style={style.subTitleDicc}>
+          Español - Shipibo
+        </Text>
       </View>
       
       <View style={style.containerBtn}>
       <TouchableOpacity 
         activeOpacity={0.7} 
-        style={style.btnDiccionario} onPress={()=>navigation.navigate('HolaMundoScreen')}>
+        style={style.btnDiccionario} onPress={()=>navigation.navigate('LetrasScreen')}>
           <Image
             source={require('../assets/img/diccionario2.png')}
             style={style.iconoBtn}
@@ -69,7 +73,13 @@ const style = StyleSheet.create({
     alignItems: 'center',
     height: 100,
     marginTop: 60,
-    top:120
+    top:100
+  },
+  subTitle: {
+    fontSize: 20,
+    marginBottom:5,
+    color: 'black',
+    fontFamily: 'AkazanRg Bold'
   },
   title: {
     fontSize: 55,
@@ -77,32 +87,33 @@ const style = StyleSheet.create({
     fontFamily: 'AkazanRg Bold',
     color: '#006605'
   },
-  subTitle: {
-    fontSize: 20,
+  subTitleDicc: {
+    fontSize: 15,
     marginBottom:5,
-    color: 'black',
-    fontFamily: 'AkazanRg Regular'
+    color:'#C2272D',
+    fontWeight:'800'
+    //fontFamily: 'AkazanRg Bold'
   },
   containerBtn: {
-    marginTop: 30,
+    marginTop: 25,
     //backgroundColor:'red',
     width,
     height: (height * 40) / 100,
     //flexDirection:'row',
     justifyContent: 'center',
     alignItems: 'center',
-    top:180
+    top:150
   },
   btnDiccionario: {
-    backgroundColor: '#fff',
-    borderColor:'#059A32',
-    borderWidth:2,
-    width: 100,
-    height: 100,
+    //backgroundColor: '#fff',
+   // borderColor:'#059A32',
+    //borderWidth:2,
+    width: 120,
+    height: 120,
     borderRadius: 100,
     justifyContent: 'center',
     alignItems: 'center',
-    shadowColor: '#000',
+    shadowColor: 'transparent',
     shadowOffset: {
       width: 0,
       height: 5,
@@ -113,11 +124,11 @@ const style = StyleSheet.create({
     elevation: 10,
   },
   iconoBtn: {
-    width: '80%',
-    height: '80%',
+    width: '120%',
+    height: '120%',
   },
   containerFooter: {
-    marginTop: 40,
+    marginTop: 20,
     justifyContent: 'center',
     alignItems: 'center',
     top:100
@@ -125,7 +136,7 @@ const style = StyleSheet.create({
   title3: {
     color: 'black',
     fontSize:20,
-    fontFamily: 'AkazanRg Regular'
+    fontFamily: 'AkazanRg Bold'
   },
   fab: {},
 });

@@ -1,27 +1,16 @@
-import React, { useState } from 'react';
-import {
-  Text,
-  TouchableOpacity,
-  View,
-  StyleSheet,
-  Image,
-  Button,
-  Dimensions,
-  ImageBackground,
-  ScrollView
-} from 'react-native';
-import { Fab } from '../components/Fab';
+import React, { useEffect, useState } from 'react';
+import { View, StyleSheet, Dimensions, ImageBackground, ScrollView} from 'react-native';
 import BtnPrueba from '../components/BtnPrueba';
 import { StackScreenProps } from '@react-navigation/stack';
 
 const { width, height } = Dimensions.get('window');
 interface Props extends StackScreenProps<any, any>{};
-export const HolaMundoScreen = ({navigation}:any) => {
-  const [contador, setContador] = useState(10);
+
+export const LetrasScreen = ({navigation}:any) => {
   return (
     <View style={style.container}>
       <ImageBackground
-        source={require('../assets/img/fondo-abc.png')}
+        source={require('../assets/img/fondo-abc1.png')}
         style={{
           position: 'absolute',
           width,
@@ -121,7 +110,7 @@ const style = StyleSheet.create({
     flexDirection:'row',
     justifyContent: 'center',
     alignItems: 'center',
-    top:60
+    top:10
   },
   btnDiccionario: {
     backgroundColor: 'blue',

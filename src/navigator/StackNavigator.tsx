@@ -1,7 +1,7 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import { ContadorScreen } from '../screens/ContadorScreen';
-import { HolaMundoScreen } from '../screens/HolaMundoScreen';
+import { HomeScreen } from '../screens/HomeScreen';
+import { LetrasScreen } from '../screens/LetrasScreen';
 import { PalabraScreen } from '../screens/PalabraScreen';
 import { SignificadoScreen } from '../screens/SignificadoScreen';
 
@@ -9,11 +9,66 @@ const Stack = createStackNavigator();
 
 const StackNavigator = () => {
   return (
-    <Stack.Navigator>
-      <Stack.Screen name="ContadorScreen" component={ContadorScreen} />
-      <Stack.Screen name="HolaMundoScreen" component={HolaMundoScreen} />
-      <Stack.Screen name="PalabraScreen" component={PalabraScreen} />
-      <Stack.Screen name="SignificadoScreen" component={SignificadoScreen} />
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: true
+      }}
+      initialRouteName='HomeScreen'
+    >
+      <Stack.Screen name="HomeScreen" options={{
+        headerShown: true,
+        headerStyle: {
+          height: 55
+        },
+        headerTitle: 'Bienvenido',
+        headerTitleStyle: {
+          color: '#006605',
+          fontSize: 20,
+          fontWeight: '700',
+        }
+      }} component={HomeScreen} />
+
+      <Stack.Screen name="LetrasScreen" options={{
+        headerShown: true,
+        headerStyle: {
+          backgroundColor: '#006605',
+          height: 55
+        },
+        headerTitle: 'Diccionario Jurídico CSJUC',
+        headerTitleStyle: {
+          color: 'white',
+          fontSize: 20,
+          fontWeight: '700'
+        }
+      }} component={LetrasScreen} />
+
+      <Stack.Screen name="PalabraScreen" options={{
+        headerShown: true,
+        headerStyle: {
+          backgroundColor: '#006605',
+          height: 55
+        },
+        headerTitle: 'Diccionario Jurídico CSJUC',
+        headerTitleStyle: {
+          color: 'white',
+          fontSize: 20,
+          fontWeight: '700'
+        }
+      }} component={PalabraScreen} />
+
+      <Stack.Screen name="SignificadoScreen" options={{
+        headerShown: true,
+        headerStyle: {
+          backgroundColor: '#006605',
+          height: 55
+        },
+        headerTitle: 'Diccionario Jurídico CSJUC',
+        headerTitleStyle: {
+          color: 'white',
+          fontSize: 20,
+          fontWeight: '700'
+        }
+      }} component={SignificadoScreen} />
     </Stack.Navigator>
   );
 }

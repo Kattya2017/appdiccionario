@@ -11,7 +11,6 @@ import {
     ImageBackground,
     ScrollView
 } from 'react-native';
-import BtnLetra from '../components/BtnLetra';
 import { StackScreenProps } from '@react-navigation/stack';
 
 const { width, height } = Dimensions.get('window');
@@ -20,7 +19,7 @@ export const PalabraScreen = ({navigation}:any) => {
     return (
         <View style={style.container}>
             <ImageBackground
-                source={require('../assets/img/fondo-abc.png')}
+                source={require('../assets/img/fondo-abc1.png')}
                 style={{
                     position: 'absolute',
                     width,
@@ -37,72 +36,72 @@ export const PalabraScreen = ({navigation}:any) => {
             <ScrollView>
             <View style={style.containerSubTitle}>
                 <TouchableOpacity onPress={()=>navigation.navigate('SignificadoScreen')}>
-                    <Text style={style.subTitle}>     Abandono de apelación</Text>
+                    <Text style={style.subTitle}>   • Abandono de apelación</Text>
                 </TouchableOpacity>
             </View>
             <View style={style.containerSubTitle}>
                 <TouchableOpacity>
-                    <Text style={style.subTitle}>     Abandono de familia</Text>
+                    <Text style={style.subTitle}>   • Abandono de familia</Text>
                 </TouchableOpacity>
             </View>
             <View style={style.containerSubTitle}>
                 <TouchableOpacity>
-                    <Text style={style.subTitle}>     Abandono de instancia</Text>
+                    <Text style={style.subTitle}>   • Abandono de instancia</Text>
                 </TouchableOpacity>
             </View>
             <View style={style.containerSubTitle}>
                 <TouchableOpacity>
-                    <Text style={style.subTitle}>     Abandono de recurso</Text>
+                    <Text style={style.subTitle}>   • Abandono de recurso</Text>
                 </TouchableOpacity>
             </View>
             <View style={style.containerSubTitle}>
                 <TouchableOpacity>
-                    <Text style={style.subTitle}>     Abjuración</Text>
+                    <Text style={style.subTitle}>   • Abjuración</Text>
                 </TouchableOpacity>
             </View>
             <View style={style.containerSubTitle}>
                 <TouchableOpacity>
-                    <Text style={style.subTitle}>     Abogado del estado</Text>
+                    <Text style={style.subTitle}>   • Abogado del estado</Text>
                 </TouchableOpacity>
             </View>
             <View style={style.containerSubTitle}>
                 <TouchableOpacity>
-                    <Text style={style.subTitle}>     Abogado patrocinante</Text>
+                    <Text style={style.subTitle}>   • Abogado patrocinante</Text>
                 </TouchableOpacity>
             </View>
             <View style={style.containerSubTitle}>
                 <TouchableOpacity>
-                    <Text style={style.subTitle}>     Abogar</Text>
+                    <Text style={style.subTitle}>   • Abogar</Text>
                 </TouchableOpacity>
             </View>
             <View style={style.containerSubTitle}>
                 <TouchableOpacity>
-                    <Text style={style.subTitle}>     Abolición</Text>
+                    <Text style={style.subTitle}>   • Abolición</Text>
                 </TouchableOpacity>
             </View>
             <View style={style.containerSubTitle}>
                 <TouchableOpacity>
-                    <Text style={style.subTitle}>     Abonar</Text>
+                    <Text style={style.subTitle}>   • Abonar</Text>
                 </TouchableOpacity>
             </View>
             <View style={style.containerSubTitle}>
                 <TouchableOpacity>
-                    <Text style={style.subTitle}>     Absolución</Text>
+                    <Text style={style.subTitle}>   • Absolución</Text>
                 </TouchableOpacity>
             </View>
             <View style={style.containerSubTitle}>
                 <TouchableOpacity>
-                    <Text style={style.subTitle}>     Absolución</Text>
+                    <Text style={style.subTitle}>   • Absolución</Text>
                 </TouchableOpacity>
             </View>
             <View style={style.containerSubTitle}>
                 <TouchableOpacity>
-                    <Text style={style.subTitle}>     Absolución</Text>
+                    <Text style={style.subTitle}>   • Absolución</Text>
                 </TouchableOpacity>
             </View>
             <View style={style.containerSubTitle}>
                 <TouchableOpacity>
-                    <Text style={style.subTitle}>     Absolución</Text>
+                    <Text style={style.subTitle}>   • Absolución</Text>
                 </TouchableOpacity>
             </View>
             </ScrollView>
@@ -120,8 +119,8 @@ const style = StyleSheet.create({
         width,
         justifyContent: 'center',
         alignItems: 'center',
-        height: 80,
-        marginTop: 80,
+        height: 90,
+        marginTop: 20,
     },
     title: {
         fontSize: 30,
@@ -129,23 +128,25 @@ const style = StyleSheet.create({
         fontFamily: 'AkazanRg Bold',
         color: '#378A0A'
     },
+    title3: {
+        color: '#5B5B5B',
+        fontSize: 25,
+        fontFamily: 'AkazanRg Bold'
+    },
     containerSubTitle: {
-        //backgroundColor:'red',
         width,
         justifyContent: 'center',
-        height: 40,
+        height: 30,
         marginTop: 20
     },
     subTitle: {
-        //backgroundColor: 'blue',
-        fontSize: 20,
+        fontSize: 25,
         marginBottom: 2,
         color: 'black',
-        fontFamily: 'AkazanRg Bold'
+        fontFamily: 'AkazanRg Regular'
     },
    containerBtn: {
         marginTop: 20,
-        //backgroundColor:'red',
         width,
         height: (height * 20) / 100,
         flexDirection: 'row',
@@ -180,9 +181,5 @@ const style = StyleSheet.create({
         alignItems: 'center',
         top: 100
     },*/
-    title3: {
-        color: '#5B5B5B',
-        fontSize: 20,
-        fontFamily: 'AkazanRg Bold'
-    },
+    
 });
