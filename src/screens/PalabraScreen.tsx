@@ -14,96 +14,96 @@ import {
 import { StackScreenProps } from '@react-navigation/stack';
 
 const { width, height } = Dimensions.get('window');
-interface Props extends StackScreenProps<any, any>{};
-export const PalabraScreen = ({navigation}:any) => {
+interface Props extends StackScreenProps<any, any> { };
+export const PalabraScreen = ({ navigation }: any) => {
     return (
         <View style={style.container}>
             <ImageBackground
-                source={require('../assets/img/fondo-abc1.png')}
+                source={require('../assets/img/shipibo-fondo.jpg')}
                 style={{
                     position: 'absolute',
-                    width,
-                    height
+                    width: '100%',
+                    height: height + 200, marginTop: -120, opacity:0.6
                 }}
                 resizeMode='cover'
             />
-            
+
             <View style={style.containerTitle}>
                 <Text style={style.title}>Palabras con la letra A</Text>
                 <Text style={style.title3}>(shipibo)</Text>
             </View>
 
             <ScrollView>
-            <View style={style.containerSubTitle}>
-                <TouchableOpacity onPress={()=>navigation.navigate('SignificadoScreen')}>
-                    <Text style={style.subTitle}>   • Abandono de apelación</Text>
-                </TouchableOpacity>
-            </View>
-            <View style={style.containerSubTitle}>
-                <TouchableOpacity>
-                    <Text style={style.subTitle}>   • Abandono de familia</Text>
-                </TouchableOpacity>
-            </View>
-            <View style={style.containerSubTitle}>
-                <TouchableOpacity>
-                    <Text style={style.subTitle}>   • Abandono de instancia</Text>
-                </TouchableOpacity>
-            </View>
-            <View style={style.containerSubTitle}>
-                <TouchableOpacity>
-                    <Text style={style.subTitle}>   • Abandono de recurso</Text>
-                </TouchableOpacity>
-            </View>
-            <View style={style.containerSubTitle}>
-                <TouchableOpacity>
-                    <Text style={style.subTitle}>   • Abjuración</Text>
-                </TouchableOpacity>
-            </View>
-            <View style={style.containerSubTitle}>
-                <TouchableOpacity>
-                    <Text style={style.subTitle}>   • Abogado del estado</Text>
-                </TouchableOpacity>
-            </View>
-            <View style={style.containerSubTitle}>
-                <TouchableOpacity>
-                    <Text style={style.subTitle}>   • Abogado patrocinante</Text>
-                </TouchableOpacity>
-            </View>
-            <View style={style.containerSubTitle}>
-                <TouchableOpacity>
-                    <Text style={style.subTitle}>   • Abogar</Text>
-                </TouchableOpacity>
-            </View>
-            <View style={style.containerSubTitle}>
-                <TouchableOpacity>
-                    <Text style={style.subTitle}>   • Abolición</Text>
-                </TouchableOpacity>
-            </View>
-            <View style={style.containerSubTitle}>
-                <TouchableOpacity>
-                    <Text style={style.subTitle}>   • Abonar</Text>
-                </TouchableOpacity>
-            </View>
-            <View style={style.containerSubTitle}>
-                <TouchableOpacity>
-                    <Text style={style.subTitle}>   • Absolución</Text>
-                </TouchableOpacity>
-            </View>
-            <View style={style.containerSubTitle}>
-                <TouchableOpacity>
-                    <Text style={style.subTitle}>   • Absolución</Text>
-                </TouchableOpacity>
-            </View>
-            <View style={style.containerSubTitle}>
-                <TouchableOpacity>
-                    <Text style={style.subTitle}>   • Absolución</Text>
-                </TouchableOpacity>
-            </View>
-            <View style={style.containerSubTitle}>
-                <TouchableOpacity>
-                    <Text style={style.subTitle}>   • Absolución</Text>
-                </TouchableOpacity>
-            </View>
+                <View style={style.containerSubTitle}>
+                    <TouchableOpacity onPress={() => navigation.navigate('SignificadoScreen')}>
+                        <Text style={style.subTitle}>   • Abandono de apelación</Text>
+                    </TouchableOpacity>
+                </View>
+                <View style={style.containerSubTitle}>
+                    <TouchableOpacity>
+                        <Text style={style.subTitle}>   • Abandono de familia</Text>
+                    </TouchableOpacity>
+                </View>
+                <View style={style.containerSubTitle}>
+                    <TouchableOpacity>
+                        <Text style={style.subTitle}>   • Abandono de instancia</Text>
+                    </TouchableOpacity>
+                </View>
+                <View style={style.containerSubTitle}>
+                    <TouchableOpacity>
+                        <Text style={style.subTitle}>   • Abandono de recurso</Text>
+                    </TouchableOpacity>
+                </View>
+                <View style={style.containerSubTitle}>
+                    <TouchableOpacity>
+                        <Text style={style.subTitle}>   • Abjuración</Text>
+                    </TouchableOpacity>
+                </View>
+                <View style={style.containerSubTitle}>
+                    <TouchableOpacity>
+                        <Text style={style.subTitle}>   • Abogado del estado</Text>
+                    </TouchableOpacity>
+                </View>
+                <View style={style.containerSubTitle}>
+                    <TouchableOpacity>
+                        <Text style={style.subTitle}>   • Abogado patrocinante</Text>
+                    </TouchableOpacity>
+                </View>
+                <View style={style.containerSubTitle}>
+                    <TouchableOpacity>
+                        <Text style={style.subTitle}>   • Abogar</Text>
+                    </TouchableOpacity>
+                </View>
+                <View style={style.containerSubTitle}>
+                    <TouchableOpacity>
+                        <Text style={style.subTitle}>   • Abolición</Text>
+                    </TouchableOpacity>
+                </View>
+                <View style={style.containerSubTitle}>
+                    <TouchableOpacity>
+                        <Text style={style.subTitle}>   • Abonar</Text>
+                    </TouchableOpacity>
+                </View>
+                <View style={style.containerSubTitle}>
+                    <TouchableOpacity>
+                        <Text style={style.subTitle}>   • Absolución</Text>
+                    </TouchableOpacity>
+                </View>
+                <View style={style.containerSubTitle}>
+                    <TouchableOpacity>
+                        <Text style={style.subTitle}>   • Absolución</Text>
+                    </TouchableOpacity>
+                </View>
+                <View style={style.containerSubTitle}>
+                    <TouchableOpacity>
+                        <Text style={style.subTitle}>   • Absolución</Text>
+                    </TouchableOpacity>
+                </View>
+                <View style={style.containerSubTitle}>
+                    <TouchableOpacity>
+                        <Text style={style.subTitle}>   • Absolución</Text>
+                    </TouchableOpacity>
+                </View>
             </ScrollView>
         </View>
     );
@@ -145,7 +145,7 @@ const style = StyleSheet.create({
         color: 'black',
         fontFamily: 'AkazanRg Regular'
     },
-   containerBtn: {
+    containerBtn: {
         marginTop: 20,
         width,
         height: (height * 20) / 100,
@@ -163,14 +163,14 @@ const style = StyleSheet.create({
         alignItems: 'center',
         shadowColor: '#000',
         shadowOffset: {
-          width: 0,
-          height: 5,
+            width: 0,
+            height: 5,
         },
         shadowOpacity: 0.34,
         shadowRadius: 6.27,
-    
+
         elevation: 10,
-      },
+    },
     iconoBtn: {
         width: '50%',
         height: '50%',
@@ -181,5 +181,5 @@ const style = StyleSheet.create({
         alignItems: 'center',
         top: 100
     },*/
-    
+
 });

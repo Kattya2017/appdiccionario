@@ -10,11 +10,9 @@ import {
   ImageBackground,
   ScrollView
 } from 'react-native';
-import BtnPrueba from '../components/BtnPrueba';
 import { StackScreenProps } from '@react-navigation/stack';
 
 const { width, height } = Dimensions.get('window');
-
 
 interface Props extends StackScreenProps<any, any>{};
 
@@ -88,7 +86,7 @@ const style = StyleSheet.create({
     color: '#006605'
   },
   subTitleDicc: {
-    fontSize: 15,
+    fontSize: 20,
     marginBottom:5,
     color:'#C2272D',
     fontWeight:'800'

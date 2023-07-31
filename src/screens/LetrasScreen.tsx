@@ -10,11 +10,11 @@ export const LetrasScreen = ({navigation}:any) => {
   return (
     <View style={style.container}>
       <ImageBackground
-        source={require('../assets/img/fondo-abc1.png')}
+        source={require('../assets/img/shipibo-fondo.jpg')}
         style={{
           position: 'absolute',
-          width,
-          height
+          width:'100%',
+          height:height+200, marginTop:-120, opacity:0.6
         }}
         resizeMode='cover'
       />
