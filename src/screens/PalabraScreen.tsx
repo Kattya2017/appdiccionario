@@ -1,21 +1,36 @@
-import React from 'react';
-
-import {
-    Text,
-    TouchableOpacity,
-    View,
-    StyleSheet,
-    Image,
-    Button,
-    Dimensions,
-    ImageBackground,
-    ScrollView
-} from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { Text, TouchableOpacity, View, StyleSheet, Dimensions, ImageBackground, ScrollView } from 'react-native';
 import { StackScreenProps } from '@react-navigation/stack';
+import { RootStackParams } from '../navigator/StackNavigator';
+import diccionarioApi from '../api/diccionarioApi';
+import { Resp, ResultPalabra } from '../interface/palabrainterface';
 
 const { width, height } = Dimensions.get('window');
-interface Props extends StackScreenProps<any, any> { };
-export const PalabraScreen = ({ navigation }: any) => {
+
+interface Props extends StackScreenProps<RootStackParams, 'PalabraScreen'> { };
+
+export const PalabraScreen = ({ navigation, route }: Props) => {
+
+    const [listPalabra, setListPalabra] = useState<Resp[]>([]);
+    useEffect(() => {
+        mostrarPalabra();
+        ///console.log('hola como estas');
+    }, [])
+
+
+    const mostrarPalabra = async () => {
+        try {
+            const resp = await diccionarioApi.get<ResultPalabra>(`/palabra/abecedario/${route.params.id}`);
+            console.log(resp.data);
+            setListPalabra(resp.data.resp);
+            console.log(listPalabra);
+        } catch (error) {
+            console.log(error);
+
+        }
+    }
+
+
     return (
         <View style={style.container}>
             <ImageBackground
@@ -23,87 +38,31 @@ export const PalabraScreen = ({ navigation }: any) => {
                 style={{
                     position: 'absolute',
                     width: '100%',
-                    height: height + 200, marginTop: -120, opacity:0.6
+                    height: height + 200, marginTop: -120, opacity: 0.6
                 }}
                 resizeMode='cover'
             />
 
             <View style={style.containerTitle}>
-                <Text style={style.title}>Palabras con la letra A</Text>
-                <Text style={style.title3}>(shipibo)</Text>
+                <Text style={style.title}>{route.params.titulo}</Text>
+                <Text style={style.title3}>({route.params.titulo_shipibo})</Text>
             </View>
 
             <ScrollView>
-                <View style={style.containerSubTitle}>
-                    <TouchableOpacity onPress={() => navigation.navigate('SignificadoScreen')}>
-                        <Text style={style.subTitle}>   • Abandono de apelación</Text>
-                    </TouchableOpacity>
-                </View>
-                <View style={style.containerSubTitle}>
-                    <TouchableOpacity>
-                        <Text style={style.subTitle}>   • Abandono de familia</Text>
-                    </TouchableOpacity>
-                </View>
-                <View style={style.containerSubTitle}>
-                    <TouchableOpacity>
-                        <Text style={style.subTitle}>   • Abandono de instancia</Text>
-                    </TouchableOpacity>
-                </View>
-                <View style={style.containerSubTitle}>
-                    <TouchableOpacity>
-                        <Text style={style.subTitle}>   • Abandono de recurso</Text>
-                    </TouchableOpacity>
-                </View>
-                <View style={style.containerSubTitle}>
-                    <TouchableOpacity>
-                        <Text style={style.subTitle}>   • Abjuración</Text>
-                    </TouchableOpacity>
-                </View>
-                <View style={style.containerSubTitle}>
-                    <TouchableOpacity>
-                        <Text style={style.subTitle}>   • Abogado del estado</Text>
-                    </TouchableOpacity>
-                </View>
-                <View style={style.containerSubTitle}>
-                    <TouchableOpacity>
-                        <Text style={style.subTitle}>   • Abogado patrocinante</Text>
-                    </TouchableOpacity>
-                </View>
-                <View style={style.containerSubTitle}>
-                    <TouchableOpacity>
-                        <Text style={style.subTitle}>   • Abogar</Text>
-                    </TouchableOpacity>
-                </View>
-                <View style={style.containerSubTitle}>
-                    <TouchableOpacity>
-                        <Text style={style.subTitle}>   • Abolición</Text>
-                    </TouchableOpacity>
-                </View>
-                <View style={style.containerSubTitle}>
-                    <TouchableOpacity>
-                        <Text style={style.subTitle}>   • Abonar</Text>
-                    </TouchableOpacity>
-                </View>
-                <View style={style.containerSubTitle}>
-                    <TouchableOpacity>
-                        <Text style={style.subTitle}>   • Absolución</Text>
-                    </TouchableOpacity>
-                </View>
-                <View style={style.containerSubTitle}>
-                    <TouchableOpacity>
-                        <Text style={style.subTitle}>   • Absolución</Text>
-                    </TouchableOpacity>
-                </View>
-                <View style={style.containerSubTitle}>
-                    <TouchableOpacity>
-                        <Text style={style.subTitle}>   • Absolución</Text>
-                    </TouchableOpacity>
-                </View>
-                <View style={style.containerSubTitle}>
-                    <TouchableOpacity>
-                        <Text style={style.subTitle}>   • Absolución</Text>
-                    </TouchableOpacity>
-                </View>
+                {
+                    listPalabra.map((resp, index) => {
+                        return (
+
+                            <View style={style.containerSubTitle} key={resp.id}>
+                                <TouchableOpacity onPress={() => navigation.navigate('SignificadoScreen', {id:resp.id, titulo:resp.titulo, titulo_shipibo:resp.titulo_shipibo, descripcion:resp.descripcion, descripcion_shipibo:resp.descripcion_shipibo, audio:resp.audio, id_abecedario:resp.id_abecedario})}>
+                                    <Text style={style.subTitle}>   • {resp.titulo}</Text>
+                                </TouchableOpacity>
+                            </View>
+                        )
+                    })
+                }
+
+
             </ScrollView>
         </View>
     );
@@ -134,12 +93,14 @@ const style = StyleSheet.create({
         fontFamily: 'AkazanRg Bold'
     },
     containerSubTitle: {
+        //backgroundColor:'red',
         width,
         justifyContent: 'center',
         height: 30,
         marginTop: 20
     },
     subTitle: {
+        //backgroundColor:'blue',
         fontSize: 25,
         marginBottom: 2,
         color: 'black',

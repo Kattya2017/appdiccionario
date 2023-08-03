@@ -5,7 +5,31 @@ import { LetrasScreen } from '../screens/LetrasScreen';
 import { PalabraScreen } from '../screens/PalabraScreen';
 import { SignificadoScreen } from '../screens/SignificadoScreen';
 
-const Stack = createStackNavigator();
+
+export type RootStackParams = {
+  HomeScreen:undefined,
+  LetrasScreen:undefined,
+  PalabraScreen:{
+    id:number,
+    titulo:string,
+    titulo_shipibo:string
+  }
+  SignificadoScreen:{
+    id:number,
+    titulo:string,
+    titulo_shipibo:string,
+    descripcion:string,
+    descripcion_shipibo:string,
+    audio:string,
+    id_abecedario:number
+  }
+  
+}
+
+const Stack = createStackNavigator<RootStackParams>();
+
+
+
 
 const StackNavigator = () => {
   return (

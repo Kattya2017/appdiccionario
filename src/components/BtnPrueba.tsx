@@ -59,7 +59,7 @@ const style = StyleSheet.create({
         shadowRadius: 6.27,
     
         elevation: 10,
-        marginRight:10
+        //marginRight:10
       },
       iconoBtn: {
         width: '40%',

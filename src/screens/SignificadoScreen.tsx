@@ -1,20 +1,16 @@
-import React from 'react';
-
-import {
-    Text,
-    TouchableOpacity,
-    View,
-    StyleSheet,
-    Image,
-    Button,
-    Dimensions,
-    ImageBackground,
-    ScrollView
-} from 'react-native';
+import React, { useEffect, useState } from 'react';
+import {Text,TouchableOpacity,View,StyleSheet,Image,Dimensions,ImageBackground} from 'react-native';
+import { Resp, ResultPalabra } from '../interface/palabrainterface';
+import diccionarioApi from '../api/diccionarioApi';
+import { StackScreenProps } from '@react-navigation/stack';
+import { RootStackParams } from '../navigator/StackNavigator';
 
 const { width, height } = Dimensions.get('window');
 
-export const SignificadoScreen = () => {
+interface Props extends StackScreenProps<RootStackParams, 'SignificadoScreen'> {};
+
+export const SignificadoScreen = ({route}: Props) => {
+
     return (
         <View style={style.container}>
             <ImageBackground
@@ -28,31 +24,23 @@ export const SignificadoScreen = () => {
             />
 
             <View style={style.containerTitle}>
-                <Text style={style.title}>Abandono de acción</Text>
-                <Text style={style.title3}>(shipibo)</Text>
+                <Text style={style.title}>{route.params.titulo}</Text>
+                <Text style={style.title3}>({route.params.titulo_shipibo})</Text>
             </View>
 
-            <View style={style.containerSubTitle}>
-                    <Text style={style.subTitle}>Que después de contestada la 
-                    demanda desampara su acción, ausentándose o no compareciendo en el tribunal, puede 
-                    ser compelido por el juez, mediante petición a proseguirla; y en caso de que no la 
-                    prosiga, debe el juez absolver al demandado de la instancia y condenar al actor en 
-                    las costas y daños que hubiere causado.</Text>
-            </View>
+                <View style={style.containerSubTitle}>
+                    <Text style={style.subTitle}>{route.params.descripcion}</Text>
+                </View>
 
-            <View style={style.containerSubTitle}>
-                    <Text style={style.subTitle}>El actor -según Escriche- que después de contestada la 
-                    demanda desampara su acción, ausentándose o no compareciendo en el tribunal, puede 
-                    ser compelido por el juez, mediante petición a proseguirla; y en caso de que no la 
-                    prosiga, debe el juez absolver al demandado de la instancia y condenar al actor en 
-                    las costas y daños que hubiere causado.</Text>
-            </View>
-
-            <View style={style.containerImg}>
-                <TouchableOpacity>
-                    <Image source={require('../assets/img/repro3.png')}/>
-                </TouchableOpacity>
-            </View>
+                <View style={style.containerSubTitle}>
+                    <Text style={style.subTitle}>{route.params.descripcion_shipibo}</Text>
+                </View>
+          
+                <View style={style.containerImg}>
+                    <TouchableOpacity>
+                        <Image source={require('../assets/img/repro3.png')}/>
+                    </TouchableOpacity>
+                </View>
         </View>
     );
 };
@@ -91,12 +79,12 @@ const style = StyleSheet.create({
         marginTop: 15
     },
     subTitle: {
-        //backgroundColor:'red',
+       // backgroundColor:'red',
         fontSize: 20,
-        marginBottom: 3,
+       // marginBottom: 3,
         color: 'black',
         textAlign:'center',
-        margin:5,
+        margin:10,
         fontFamily: 'AkazanRg Regular',
         
     },
