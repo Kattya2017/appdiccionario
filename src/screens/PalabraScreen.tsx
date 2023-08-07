@@ -101,7 +101,7 @@ const style = StyleSheet.create({
     },
     subTitle: {
         //backgroundColor:'blue',
-        fontSize: 25,
+        fontSize: 23,
         marginBottom: 2,
         color: 'black',
         fontFamily: 'AkazanRg Regular'

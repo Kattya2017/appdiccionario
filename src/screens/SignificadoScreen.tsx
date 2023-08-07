@@ -33,7 +33,7 @@ export const SignificadoScreen = ({route}: Props) => {
                 </View>
 
                 <View style={style.containerSubTitle}>
-                    <Text style={style.subTitle}>{route.params.descripcion_shipibo}</Text>
+                    <Text style={style.subTitle2}>{route.params.descripcion_shipibo}</Text>
                 </View>
           
                 <View style={style.containerImg}>
@@ -75,19 +75,28 @@ const style = StyleSheet.create({
         width,
         justifyContent: 'center',
         alignItems:'center',
-        height: 160,
+        height: 180,
         marginTop: 15
     },
     subTitle: {
-       // backgroundColor:'red',
-        fontSize: 20,
-       // marginBottom: 3,
+       //backgroundColor:'red',
+        fontSize: 25,
+       //marginBottom: -20,
         color: 'black',
         textAlign:'center',
+        height: 170,
         margin:10,
         fontFamily: 'AkazanRg Regular',
-        
     },
+    subTitle2: {
+         fontSize: 25,
+         color: 'black',
+         textAlign:'center',
+         height: 170,
+         margin:10,
+         fontFamily: 'AkazanRg Regular',
+         
+     },
     containerImg: {
         //backgroundColor:'green',
         width,
