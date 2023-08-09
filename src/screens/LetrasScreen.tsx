@@ -48,6 +48,7 @@ export const LetrasScreen = ({navigation}:Props) => {
         resizeMode='cover'
       />
 
+
       <ScrollView>
       <View style={style.containerBtn}>
       <Row style={{padding:20}}>
