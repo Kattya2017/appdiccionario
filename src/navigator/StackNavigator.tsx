@@ -35,9 +35,15 @@ const StackNavigator = () => {
   return (
     <Stack.Navigator
       screenOptions={{
-        headerShown: true
+        headerShown: true,
+        //animationTypeForReplace:'pop',
+        freezeOnBlur:false,
+        
       }}
       initialRouteName='HomeScreen'
+      //detachInactiveScreens={true}
+      
+      
     >
       <Stack.Screen name="HomeScreen" options={{
         headerShown: true,
@@ -81,7 +87,7 @@ const StackNavigator = () => {
       }} component={PalabraScreen} />
 
       <Stack.Screen name="SignificadoScreen" options={{
-        headerShown: true,
+        headerShown: false,
         headerStyle: {
           backgroundColor: '#006605',
           height: 55
