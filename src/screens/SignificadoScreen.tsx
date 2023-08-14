@@ -85,6 +85,7 @@ export const SignificadoScreen = ({ route, navigation }: Props) => {
                         <Icon
                             name='arrow-back-outline'
                             size={25}
+                            color={'white'}
                         />
                     </TouchableOpacity>
                 </View>
