@@ -17,7 +17,7 @@ const Reproductor = ({audio}:Props) => {
     const play = () => {
         try {
             setVisible(true);
-            let playlist = new Sound(`http://192.168.1.46:4000/api/palabra/mostrar/audio/${audio}`, Sound.MAIN_BUNDLE, (err) => {
+            let playlist = new Sound(`http://192.168.47.94:4000/api/palabra/mostrar/audio/${audio}`, Sound.MAIN_BUNDLE, (err) => {
                 if (err) {
                     console.log(err);
                     //Alert.alert('Error','Error de reproduccion');

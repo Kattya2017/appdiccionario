@@ -20,7 +20,7 @@ export const SignificadoScreen = ({ route, navigation }: Props) => {
     const play = async() => {
         try {
             setVisible(true);
-            let playlist = new Sound(`https://backendiccionario.gongalsoft.com/api/palabra/mostrar/audio/${route.params.audio}`, Sound.MAIN_BUNDLE, (err) => {
+            let playlist = new Sound(`http://192.168.1.46:4000/api/palabra/mostrar/audio/${route.params.audio}`, Sound.MAIN_BUNDLE, (err) => {
                 if (err) {
                     console.log(err);
                     //Alert.alert('Error','Error de reproduccion');
@@ -29,7 +29,6 @@ export const SignificadoScreen = ({ route, navigation }: Props) => {
                 setDuracion(playlist.getDuration());
                 playlist.play((success) => {
                     console.log('end', success);
-
                 })
             })
             setMusic(playlist);
@@ -38,10 +37,7 @@ export const SignificadoScreen = ({ route, navigation }: Props) => {
             Alert.alert('Error', 'Error de reproduccion');
         }
     }
-    const retornar = () => {
-        music?.stop();
-        navigation.pop();
-    }
+    const retornar = () => {music?.stop(); navigation.pop();}
     useEffect(() => {
         try {
             if (music) {
@@ -64,47 +60,25 @@ export const SignificadoScreen = ({ route, navigation }: Props) => {
                     width,
                     height: '100%'
                 }}
-                resizeMode='cover'
-            />
+                resizeMode='cover'/>
+
+
             {/* Este View Pertenece al Header */}
-            <View
-                style={{
-                    backgroundColor: '#006605',
-                    height: 55,
-                    width,
-                    flexDirection: 'row',
-                    alignItems: 'center'
-                }}
-            >
-                <View
-                    style={{
-                        width: '17%',
-                        justifyContent: 'center',
-                        alignItems: 'center'
-                    }}
-                >
-                    <TouchableOpacity
-                        onPress={retornar}
-                    >
-                        <Icon
-                            name='arrow-back-outline'
-                            size={25}
-                            color={'white'}
-                        />
+            <View style={{backgroundColor: '#006605', height: 55, width, flexDirection: 'row', alignItems: 'center'}}>
+                <View style={{ width: '17%', justifyContent: 'center', alignItems: 'center'}}>
+                    <TouchableOpacity onPress={retornar}>
+                        <Icon name='arrow-back-outline' size={25} color={'white'}/>
                     </TouchableOpacity>
                 </View>
+
                 <View>
-                    <Text style={{
-                        color: 'white',
-                        fontSize: 20,
-                        fontWeight: '700'
-                    }}>Diccionario Jurídico CSJUC</Text>
+                    <Text style={{ color: 'white', fontSize: 20, fontWeight: '700'}}>Diccionario Jurídico CSJUC</Text>
                 </View>
             </View>
+
+
             {/* Aca comienza el contenido */}
-            <ScrollView
-                style={{ flex: 1 }}
-            >
+            <ScrollView style={{ flex: 1 }}>
                 <View style={style.containerTitle}>
                     <Text style={style.title}>{route.params.titulo}</Text>
                     <Text style={style.title3}>({route.params.titulo_shipibo})</Text>
@@ -128,97 +102,41 @@ export const SignificadoScreen = ({ route, navigation }: Props) => {
                             height:140,
                         }}
                     /> */}
-                    <View
-                        style={{
-                            display: (visible) ? 'none' : 'flex'
-                        }}
-                    >
-                        <TouchableOpacity
-                            onPress={play}
 
-                        >
-                            <Icon
-                                name='play-outline'
-                                size={55}
-                                color={'black'}
-                            />
-
+                    <View style={{display: (visible) ? 'none' : 'flex'}}>
+                        <TouchableOpacity onPress={play}>
+                            <Icon name='play-outline' size={65} color={'black'}/>
                         </TouchableOpacity>
                     </View>
-                    <View
-                        style={{
-                            display: (!visible) ? 'none' : 'flex',
-                            flexDirection: 'row',
-                            justifyContent: 'space-between',
-                            padding: 25,
-                            width,
-                            alignItems: 'center'
-                        }}
-                    >
-                        <TouchableOpacity
-                            onPress={() => music?.setCurrentTime(segundos - 15)}
-                        >
-                            <Icon
-                                name='play-back-outline'
-                                size={55}
-                                color={'black'}
-                            />
 
+                    <View style={{display: (!visible) ? 'none' : 'flex', flexDirection: 'row', justifyContent: 'space-between', padding: 25, width, alignItems: 'center'}} >
+                        <TouchableOpacity onPress={() => music?.setCurrentTime(segundos - 15)} >
+                            <Icon name='play-back-outline' size={55} color={'black'}/>
                         </TouchableOpacity>
 
-                        <TouchableOpacity
-                            onPress={() => music!.pause()}
-                        >
-                            <Icon
-                                name='pause-outline'
-                                size={55}
-                                color={'black'}
-                            />
+                        <TouchableOpacity onPress={() => music!.pause()}>
+                            <Icon name='pause-outline' size={55} color={'black'} />
+                         </TouchableOpacity>
 
-                        </TouchableOpacity>
-                        <TouchableOpacity
-                            onPress={() => music?.play()}
-                        >
-                            <Icon
-                                name='play-circle-outline'
-                                size={55}
-                                color={'black'}
-                            />
-
-                        </TouchableOpacity>
-                        <TouchableOpacity
-                            onPress={() => {
-                                setVisible(false);
-                                music?.stop();
-
-                            }}
-                        >
-                            <Icon
-                                name='stop-outline'
-                                size={55}
-                                color={'black'}
-                            />
-
+                        <TouchableOpacity onPress={() => music?.play()} >
+                            <Icon name='play-circle-outline' size={55} color={'black'}/>
                         </TouchableOpacity>
 
-                        <TouchableOpacity
-                            onPress={() => music?.setCurrentTime(segundos + 15)}
-                        >
-                            <Icon
-                                name='play-forward-outline'
-                                size={55}
-                                color={'black'}
-                            />
+                        <TouchableOpacity onPress={() => { setVisible(false); music?.stop();}}>
+                            <Icon name='stop-outline' size={55} color={'black'}/>
+                        </TouchableOpacity>
 
+                        <TouchableOpacity onPress={() => music?.setCurrentTime(segundos + 15)}>
+                            <Icon name='play-forward-outline' size={55} color={'black'}/>
                         </TouchableOpacity>
                     </View>
+
                 </View>
             </ScrollView>
-
-
         </View>
     );
 };
+
 
 const style = StyleSheet.create({
     container: {
@@ -228,18 +146,18 @@ const style = StyleSheet.create({
         alignItems: 'center',
     },
     containerTitle: {
-        //backgroundColor:'red',
         width,
         justifyContent: 'center',
         alignItems: 'center',
         //height: 90,
-        marginTop: 20,
+        marginTop: 35,
     },
     title: {
         fontSize: 40,
         marginBottom: 2,
         fontFamily: 'AkazanRg Bold',
-        color: '#378A0A'
+        color: '#378A0A',
+        textAlign: 'center'
     },
     title3: {
         color: '#5B5B5B',
@@ -252,7 +170,7 @@ const style = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         //height: 180,
-        marginTop: 15
+        marginTop: 20
     },
     subTitle: {
         //backgroundColor:'red',
@@ -264,6 +182,7 @@ const style = StyleSheet.create({
         fontFamily: 'AkazanRg Regular',
     },
     subTitle2: {
+        //backgroundColor:'red',
         fontSize: 25,
         color: 'black',
         textAlign: 'center',
@@ -273,7 +192,7 @@ const style = StyleSheet.create({
     },
     containerReproductor: {
         //backgroundColor:'green',
-
+        marginTop:15,
         width,
         justifyContent: 'center',
         alignItems: 'center',
