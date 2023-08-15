@@ -43,7 +43,7 @@ export const HomeScreen = ({navigation}:Props) => {
       <View style={style.containerBtn}>
       <TouchableOpacity 
         activeOpacity={0.7} 
-        style={style.btnDiccionario} onPress={()=>navigation.navigate('LetrasScreen')}>
+        style={style.btnDiccionario} onPress={()=>navigation.navigate('PresentacionScreen')}>
           <Image
             source={require('../assets/img/diccionario2.png')}
             style={style.iconoBtn}

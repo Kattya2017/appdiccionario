@@ -20,7 +20,7 @@ export const SignificadoScreen = ({ route, navigation }: Props) => {
     const play = async() => {
         try {
             setVisible(true);
-            let playlist = new Sound(`http://192.168.1.46:4000/api/palabra/mostrar/audio/${route.params.audio}`, Sound.MAIN_BUNDLE, (err) => {
+            let playlist = new Sound(`https://backendiccionario.gongalsoft.com/api/palabra/mostrar/audio/${route.params.audio}`, Sound.MAIN_BUNDLE, (err) => {
                 if (err) {
                     console.log(err);
                     //Alert.alert('Error','Error de reproduccion');
