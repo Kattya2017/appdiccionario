@@ -17,10 +17,10 @@ export const SignificadoScreen = ({ route, navigation }: Props) => {
     const [duracion, setDuracion] = useState(0);
     const [segundos, setSegundos] = useState(0);
     const [visible, setVisible] = useState(false);
-    const play = () => {
+    const play = async() => {
         try {
             setVisible(true);
-            let playlist = new Sound(`http://192.168.1.46:4000/api/palabra/mostrar/audio/${route.params.audio}`, Sound.MAIN_BUNDLE, (err) => {
+            let playlist = new Sound(`https://backendiccionario.gongalsoft.com/api/palabra/mostrar/audio/${route.params.audio}`, Sound.MAIN_BUNDLE, (err) => {
                 if (err) {
                     console.log(err);
                     //Alert.alert('Error','Error de reproduccion');
@@ -43,12 +43,16 @@ export const SignificadoScreen = ({ route, navigation }: Props) => {
         navigation.pop();
     }
     useEffect(() => {
-        if (music) {
-            let id = setInterval(() => {
-                music.getCurrentTime((second, play) => {
-                    setSegundos(second)
-                })
-            }, 100)
+        try {
+            if (music) {
+                let id = setInterval(() => {
+                    music.getCurrentTime((second, play) => {
+                        setSegundos(second)
+                    })
+                }, 100)
+            }
+        } catch (error) {
+            
         }
     }, [music]);
     return (
