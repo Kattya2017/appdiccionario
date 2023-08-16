@@ -12,7 +12,7 @@ export const TerminoJuridicosScreen = ({navigation}: Props) =>{
     return(
         <View style={style.container}>
             <ImageBackground
-            source={require('../assets/img/fondo-palabras-2.png')}
+            source={require('../assets/img/fondo-palabras-4.png')}
             style={{
                 position: 'absolute',
                 width: '100%',
@@ -32,10 +32,14 @@ export const TerminoJuridicosScreen = ({navigation}: Props) =>{
         activeOpacity={0.7} 
         style={style.btnDiccionario} onPress={()=>navigation.navigate('LetrasScreen')}>
           <Image
-            source={require('../assets/img/diccionario2.png')}
+            source={require('../assets/img/libro.png')}
             style={style.iconoBtn}
           /> 
     </TouchableOpacity>
+        </View>
+        
+        <View style={style.containerClick}>
+            <Text style={style.click} >¡Clic aqui!</Text>
         </View>
 
         </View>
@@ -74,21 +78,19 @@ const style = StyleSheet.create({
         fontFamily: 'AkazanRg Bold'
     },
     containerBtn: {
-        marginTop: 25,
-        //backgroundColor:'red',
+        marginTop: 12,
         width,
-        height: (height * 40) / 100,
-        //flexDirection:'row',
-        justifyContent: 'flex-start',
+       // height: (height * 40) / 100,
         alignItems: 'flex-end',
-        top:150
+        top:-10,
+        position: 'absolute',
       },
       btnDiccionario: {
-        //backgroundColor: '#fff',
-       // borderColor:'#059A32',
-        //borderWidth:2,
-        width: 120,
-        height: 120,
+        backgroundColor: '#fff',
+        borderColor:'#0C662B',
+        borderWidth:2,
+        width: 85,
+        height: 85,
         borderRadius: 100,
         justifyContent: 'center',
         alignItems: 'center',
@@ -103,7 +105,25 @@ const style = StyleSheet.create({
         elevation: 10,
       },
       iconoBtn: {
-        width: '60%',
-        height: '60%',
+        width: '78%',
+        height: '78%'
       },
+      containerClick: {
+        //backgroundColor:'green',
+        marginTop: 100,
+        width,
+        height:-100,
+       //height: (height * 40) / 100,
+        alignItems: 'flex-end',
+        top:-10,
+      },
+      click:{
+        fontSize: 20,
+        marginBottom:5,
+        fontFamily: 'AkazanRg Bold',
+        textAlign:'center',
+        color: 'blue',
+        right: 8,
+        backgroundColor: '#fff',
+      }
 });

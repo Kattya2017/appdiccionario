@@ -20,7 +20,7 @@ export const SignificadoScreen = ({ route, navigation }: Props) => {
     const play = async() => {
         try {
             setVisible(true);
-            let playlist = new Sound(`https://backendiccionario.gongalsoft.com/api/palabra/mostrar/audio/${route.params.audio}`, Sound.MAIN_BUNDLE, (err) => {
+            let playlist = new Sound(`http://192.168.47.94:4000/api/palabra/mostrar/audio/${route.params.audio}`, Sound.MAIN_BUNDLE, (err) => {
                 if (err) {
                     console.log(err);
                     //Alert.alert('Error','Error de reproduccion');
@@ -85,10 +85,12 @@ export const SignificadoScreen = ({ route, navigation }: Props) => {
                 </View>
 
                 <View style={style.containerSubTitle}>
+                    <Text style={style.sub}>Español:</Text>
                     <Text style={style.subTitle}>{route.params.descripcion}</Text>
                 </View>
 
                 <View style={style.containerSubTitle}>
+                    <Text style={style.sub}>Shipibo:</Text>
                     <Text style={style.subTitle2}>{route.params.descripcion_shipibo}</Text>
                 </View>
 
@@ -165,29 +167,35 @@ const style = StyleSheet.create({
         fontFamily: 'AkazanRg Bold'
     },
     containerSubTitle: {
-        //backgroundColor:'blue',
         width,
         justifyContent: 'center',
-        alignItems: 'center',
+        //alignItems: 'center',
         //height: 180,
-        marginTop: 20
+        marginTop: 25
+    },
+    sub:{
+        //backgroundColor: 'red',
+        fontSize: 23,
+        color:'#911519',
+        fontFamily: 'AkazanRg Bold',
+        textAlign: 'left',
+        textDecorationLine:'underline',
+        margin: 13,
+        marginBottom:-10
     },
     subTitle: {
-        //backgroundColor:'red',
         fontSize: 25,
-        //marginBottom: -20,
         color: 'black',
-        textAlign: 'center',
-        margin: 10,
+        textAlign: 'justify',
         fontFamily: 'AkazanRg Regular',
+        margin: 13
     },
     subTitle2: {
-        //backgroundColor:'red',
         fontSize: 25,
-        color: 'black',
-        textAlign: 'center',
-        margin: 10,
+        color: '#353535',
+        textAlign: 'justify',
         fontFamily: 'AkazanRg Regular',
+        margin: 13
 
     },
     containerReproductor: {

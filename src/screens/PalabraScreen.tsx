@@ -82,14 +82,14 @@ const style = StyleSheet.create({
         marginTop: 20,
     },
     title: {
-        fontSize: 30,
+        fontSize: 35,
         marginBottom: 2,
         fontFamily: 'AkazanRg Bold',
         color: '#378A0A'
     },
     title3: {
         color: '#5B5B5B',
-        fontSize: 25,
+        fontSize: 30,
         fontFamily: 'AkazanRg Bold'
     },
     containerSubTitle: {
@@ -97,14 +97,14 @@ const style = StyleSheet.create({
         width,
         justifyContent: 'center',
         height: 30,
-        marginTop: 20
+        marginTop: 15
     },
     subTitle: {
         //backgroundColor:'blue',
-        fontSize: 23,
+        fontSize: 27,
         marginBottom: 2,
         color: 'black',
-        fontFamily: 'AkazanRg Regular'
+        //fontFamily: 'AkazanRg Regular'
     },
     containerBtn: {
         marginTop: 20,

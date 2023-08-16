@@ -23,19 +23,21 @@ export const PresentacionScreen = ({navigation}:Props) =>{
 
                 <View style={style.containerBtn}>
                     <Text style={style.title} >Presentación</Text>
-                    <Text style={style.title2} >El idioma shipibo es una de las leguas
-                        mas usadas y comunes en la Region de Ucayali,
-                        es por ello que se realizo diversas coordinaciones
-                        con la Univerdidad Nacional Intercultural de la Amazonía, interpretes,
-                        docentes y entre otros; con la finalidad de tener acceso al usuario con
-                        el vocabulario. Por lo que esta presidencia a tenido por innovar la tabla
-                        de terminos juridicos español-shipibo.
+                    <Text style={style.title2} >La Corte Superior de Justicia, tiene el
+                    constante compromiso en articulación con los intérpretes, docentes y estudiantes
+                    de la Universidad Nacional Intercultural de la Amazonía acercar los servicios
+                    de justicia a la población de las comunidades nativas mediante el vocabulario de 
+                    términos judiciales en el idioma shipibo, siendo una de las lenguas mas usadas y
+                    comunes en nuestra Región de Ucayali. Por ello, hemos desarrollado este aplicativo
+                    como herramienta tecnológica donde se podra consultar los terminos o palabras con
+                    su significado y pronunciamiento en el idioma (español - shipibo) acerca de los
+                    términos judiciales mas usados en nuestra corte.
                     </Text>
                 </View>
 
                 <View style={style.containerSubTitle}>
                     <TouchableOpacity onPress={()=> navigation.navigate('TerminosJuridicosScreen')}>
-                        <Text>Terminos Jurídicos</Text>
+                        <Text style={style.title3}>Terminos Jurídicos</Text>
                     </TouchableOpacity>
                 </View>
 
@@ -57,11 +59,12 @@ const style = StyleSheet.create({
         top: 10
     },
     containerSubTitle:{
+        //backgroundColor:'red',
         width,
         justifyContent: 'center',
         alignItems: 'center',
         height: 100,
-        marginTop: 60,
+        marginTop: -70,
         top:100
     },
     title: {
@@ -73,10 +76,17 @@ const style = StyleSheet.create({
     title2: {
         //backgroundColor: 'red',
         color: 'black',
-        fontSize: 20,
-        textAlign: 'center',
+        fontSize: 21,
+        textAlign: 'justify',
         marginTop: 30,
-        margin:10,
-        fontFamily: 'AkazanRg Bold'
+        margin: 15,
+        fontFamily: 'Roboto-Medium'
     },
+    title3:{
+        fontSize: 25,
+        color: 'blue',
+        textAlign: 'center',
+        fontWeight:'800',
+        textDecorationLine:'underline'
+    }
 });
