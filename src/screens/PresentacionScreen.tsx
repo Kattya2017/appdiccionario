@@ -23,15 +23,19 @@ export const PresentacionScreen = ({navigation}:Props) =>{
 
                 <View style={style.containerBtn}>
                     <Text style={style.title} >Presentación</Text>
-                    <Text style={style.title2} >La Corte Superior de Justicia, tiene el
-                    constante compromiso en articulación con los intérpretes, docentes y estudiantes
-                    de la Universidad Nacional Intercultural de la Amazonía acercar los servicios
-                    de justicia a la población de las comunidades nativas mediante el vocabulario de 
-                    términos judiciales en el idioma shipibo, siendo una de las lenguas mas usadas y
-                    comunes en nuestra Región de Ucayali. Por ello, hemos desarrollado este aplicativo
-                    como herramienta tecnológica donde se podra consultar los terminos o palabras con
-                    su significado y pronunciamiento en el idioma (español - shipibo) acerca de los
-                    términos judiciales mas usados en nuestra corte.
+                    <Text style={style.title2} >La Corte Superior de Justicia representado por el
+                    Presidente Dr. Tullio Deifilio Bermeo Turchi, tiene el compromiso de articular
+                    acciones con instituciones públicas y privadas, en esta oportunidad con la 
+                    Universidad Nacional Intercultural de la Amazonía y los interpretes acreditados 
+                    por el Ministerio de Cultura, con el fin de brindar los servicios del sistema de 
+                    justicia a las personas más vulnerables de nuestra región y sin discriminación alguna.
+                    </Text>
+                    <Text style={style.title2} >En esta oportunidad se presenta un vocabulario en términos jurídicos más usuales 
+                    para el alcance de todos los usuarios, con el propósito de llegar a nuestros hermanos 
+                    de las comunidades nativas y comunidades campesinas. Es por ello, que se ha desarrollado 
+                    el aplicativo “Términos Jurídicos” como herramienta tecnológica donde se podrá consultar 
+                    las palabras en la lengua (shipibo-konibo), considerando que esta lengua pertenece a la 
+                    familia Pano y es más hablado en las cuencas del Río Ucayali.  
                     </Text>
                 </View>
 
@@ -65,7 +69,7 @@ const style = StyleSheet.create({
         alignItems: 'center',
         height: 100,
         marginTop: -70,
-        top:100
+        top:80
     },
     title: {
         fontSize: 50,
@@ -76,7 +80,7 @@ const style = StyleSheet.create({
     title2: {
         //backgroundColor: 'red',
         color: 'black',
-        fontSize: 21,
+        fontSize: 18,
         textAlign: 'justify',
         marginTop: 30,
         margin: 15,
