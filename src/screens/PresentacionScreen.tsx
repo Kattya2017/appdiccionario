@@ -12,11 +12,11 @@ export const PresentacionScreen = ({navigation}:Props) =>{
     return(
         <View style={style.container}>
             <ImageBackground
-            source={require('../assets/img/shipibo-fondo.jpg')}
+            source={require('../assets/img/presentacion.png')}
             style={{
                 position: 'absolute',
-                width: '100%',
-                height: height+200, marginTop:-120, opacity:0.6
+                width,
+                height,
             }}
             resizeMode='cover'
             />
@@ -62,6 +62,22 @@ const style = StyleSheet.create({
         alignItems: 'center',
         top: 10
     },
+    title: {
+        fontSize: 50,
+        marginTop:45,
+        //marginBottom: 2,
+        fontFamily: 'AkazanRg Bold',
+        color: '#378A0A'
+    },
+    title2: {
+        //backgroundColor: 'white',
+        color: 'black',
+        fontSize: 17,
+        textAlign: 'justify',
+        marginTop: 10,
+        margin: 25,
+        fontFamily: 'Roboto-Medium'
+    },
     containerSubTitle:{
         //backgroundColor:'red',
         width,
@@ -69,22 +85,7 @@ const style = StyleSheet.create({
         alignItems: 'center',
         height: 100,
         marginTop: -70,
-        top:80
-    },
-    title: {
-        fontSize: 50,
-        marginBottom: 2,
-        fontFamily: 'AkazanRg Bold',
-        color: '#378A0A'
-    },
-    title2: {
-        //backgroundColor: 'white',
-        color: 'black',
-        fontSize: 18,
-        textAlign: 'justify',
-        marginTop: 30,
-        margin: 15,
-        fontFamily: 'Roboto-Medium'
+        top:40
     },
     title3:{
         fontSize: 25,
@@ -93,4 +94,5 @@ const style = StyleSheet.create({
         fontWeight:'800',
         textDecorationLine:'underline'
     }
+
 });
