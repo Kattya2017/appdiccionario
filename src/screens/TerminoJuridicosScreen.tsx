@@ -12,7 +12,7 @@ export const TerminoJuridicosScreen = ({navigation}: Props) =>{
     return(
         <View style={style.container}>
             <ImageBackground
-            source={require('../assets/img/fondo-palabras-4.png')}
+            source={require('../assets/img/palabras-2.png')}
             style={{
                 position: 'absolute',
                 width: '100%',
@@ -87,7 +87,7 @@ const style = StyleSheet.create({
       },
       btnDiccionario: {
         backgroundColor: '#fff',
-        borderColor:'#0C662B',
+        borderColor:'#0F8131',
         borderWidth:2,
         width: 85,
         height: 85,

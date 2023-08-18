@@ -106,7 +106,7 @@ const style = StyleSheet.create({
     fontFamily: 'AkazanRg Regular'
   },
   containerBtn: {
-    marginTop: 20,
+    marginTop: 5,
     //padding:25,
     //backgroundColor:'red',
     width,

@@ -78,7 +78,7 @@ const style = StyleSheet.create({
         color: '#378A0A'
     },
     title2: {
-        //backgroundColor: 'red',
+        //backgroundColor: 'white',
         color: 'black',
         fontSize: 18,
         textAlign: 'justify',

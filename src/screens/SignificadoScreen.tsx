@@ -171,7 +171,7 @@ const style = StyleSheet.create({
         justifyContent: 'center',
         //alignItems: 'center',
         //height: 180,
-        marginTop: 25
+        marginTop: 15
     },
     sub:{
         //backgroundColor: 'red',

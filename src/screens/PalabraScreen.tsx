@@ -82,28 +82,30 @@ const style = StyleSheet.create({
         marginTop: 20,
     },
     title: {
-        fontSize: 35,
+        fontSize: 25,
         marginBottom: 2,
-        fontFamily: 'AkazanRg Bold',
+        fontWeight: 'bold',
+        //fontFamily: 'AkazanRg Bold',
         color: '#378A0A'
     },
     title3: {
         color: '#5B5B5B',
         fontSize: 30,
+        //fontWeight: '500',
         fontFamily: 'AkazanRg Bold'
     },
     containerSubTitle: {
         //backgroundColor:'red',
         width,
         justifyContent: 'center',
-        height: 30,
-        marginTop: 15
+        height: 45,
+        marginTop: 5
     },
     subTitle: {
         //backgroundColor:'blue',
-        fontSize: 27,
-        marginBottom: 2,
+        fontSize: 25,
         color: 'black',
+        fontWeight: '500',
         //fontFamily: 'AkazanRg Regular'
     },
     containerBtn: {

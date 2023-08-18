@@ -21,7 +21,7 @@ export const HomeScreen = ({navigation}:Props) => {
   return (
     <View style={style.container}>
       <ImageBackground
-        source={require('../assets/img/portada1.png')}
+        source={require('../assets/img/portada-3.png')}
         style={{
           position: 'absolute',
           width,
@@ -30,11 +30,11 @@ export const HomeScreen = ({navigation}:Props) => {
         resizeMode='cover'
       />
       <View style={style.containerTitle}>
-        <Text style={style.subTitle}>
+        {/*<Text style={style.subTitle}>
           Corte Superior de Justicia de Ucayali
         </Text>
         <Text style={style.title}>DICCIONARIO</Text>
-        <Text style={style.title}>JURÍDICO</Text>
+      <Text style={style.title}>JURÍDICO</Text>*/}
         <Text style={style.subTitleDicc}>
           Español - Shipibo
         </Text>
@@ -80,20 +80,21 @@ const style = StyleSheet.create({
     fontFamily: 'AkazanRg Bold'
   },
   title: {
-    fontSize: 55,
-    marginBottom: 2,
-    fontFamily: 'AkazanRg Bold',
-    color: '#006605'
+    fontSize: 45,
+    //fontFamily: 'AkazanRg Bold',
+    color: '#006605',
+    fontWeight: '900'
   },
   subTitleDicc: {
+    //backgroundColor:'red',
     fontSize: 20,
-    marginBottom:5,
+    marginBottom:-180,
     color:'#C2272D',
     fontWeight:'800'
     //fontFamily: 'AkazanRg Bold'
   },
   containerBtn: {
-    marginTop: 25,
+    marginTop: 70,
     //backgroundColor:'red',
     width,
     height: (height * 40) / 100,
@@ -126,15 +127,16 @@ const style = StyleSheet.create({
     height: '120%',
   },
   containerFooter: {
-    marginTop: 20,
+    marginTop: 30,
     justifyContent: 'center',
     alignItems: 'center',
     top:100
   },
   title3: {
     color: 'black',
-    fontSize:20,
-    fontFamily: 'AkazanRg Bold'
+    fontSize:16,
+    fontWeight: 'bold'
+    //fontFamily: 'AkazanRg Bold'
   },
   fab: {},
 });

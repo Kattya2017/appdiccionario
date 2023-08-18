@@ -49,7 +49,7 @@ const StackNavigator = () => {
       
     >
       <Stack.Screen name="HomeScreen" options={{
-        headerShown: true,
+        headerShown: false,
         headerStyle: {
           height: 55
         },
@@ -76,7 +76,7 @@ const StackNavigator = () => {
       }} component={PresentacionScreen}/>
 
       <Stack.Screen name="TerminosJuridicosScreen" options={{
-         headerShown: false,
+         headerShown: true,
          headerStyle: {
            backgroundColor: '#006605',
            height: 55
