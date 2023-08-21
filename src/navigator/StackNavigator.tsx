@@ -75,7 +75,7 @@ const StackNavigator = () => {
         }
       }} component={PresentacionScreen}/>
 
-      <Stack.Screen name="TerminosJuridicosScreen" options={{
+      <Stack.Screen name="TerminoJuridicosScreen" options={{
          headerShown: true,
          headerStyle: {
            backgroundColor: '#006605',

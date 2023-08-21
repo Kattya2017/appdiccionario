@@ -21,13 +21,13 @@ export const TerminoJuridicosScreen = ({navigation}: Props) =>{
             resizeMode='cover'
             />
 
-                {/*<View style={style.containerSubTitle}>
-                    <TouchableOpacity onPress={()=> navigation.navigate('TerminosJuridicosScreen')}>
-                        <Text>Terminos Jurídicos</Text>
+                <View style={style.containerSubTitle}>
+                    <TouchableOpacity onPress={()=> navigation.navigate('TerminoJuridicosScreen')}>
+                        
                     </TouchableOpacity>
-        </View>*/}
+        </View>
 
-        <View style={style.containerBtn}>
+        {/*<View style={style.containerBtn}>
         <TouchableOpacity 
         activeOpacity={0.7} 
         style={style.btnDiccionario} onPress={()=>navigation.navigate('LetrasScreen')}>
@@ -36,11 +36,11 @@ export const TerminoJuridicosScreen = ({navigation}: Props) =>{
             style={style.iconoBtn}
           /> 
     </TouchableOpacity>
-        </View>
+          </View>*/}
         
-        <View style={style.containerClick}>
+        {/*<View style={style.containerClick}>
             <Text style={style.click} >¡Clic aqui!</Text>
-        </View>
+          </View>*/}
 
         </View>
 

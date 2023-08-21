@@ -40,19 +40,22 @@ export const PresentacionScreen = ({ navigation }: Props) => {
                 </Text>
             </View>
 
-            <View style={style.containerSubTitle}>
+            <View style={style.containerSubTitle1}>
                 {/*<TouchableOpacity onPress={() => navigation.navigate('TerminosJuridicosScreen')}>
                     <Text style={style.title3}>Terminos Jurídicos</Text>
             </TouchableOpacity>*/}
 
                 <TouchableOpacity
                 activeOpacity={0.7}
-                    style={style.btnDiccionario} onPress={() => navigation.navigate('LetrasScreen')}>
+                    style={style.btnDiccionario} onPress={() => navigation.navigate('TerminoJuridicosScreen')}>
                     <Image
-                        source={require('../assets/img/libro.png')}
+                        source={require('../assets/img/aaa.png')}
                         style={style.iconoBtn}
                     />
                 </TouchableOpacity>
+            </View>
+
+            <View style={style.containerSubTitle2}>
                 
                 <TouchableOpacity
                     activeOpacity={0.7}
@@ -97,16 +100,6 @@ const style = StyleSheet.create({
         margin: 25,
         fontFamily: 'Roboto-Medium'
     },
-    containerSubTitle: {
-        //backgroundColor:'red',
-        width,
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: 100,
-        marginTop: -70,
-        top: 40
-        //margin: 12, width, alignItems: 'flex-end', top: -10, position: 'absolute'
-    },
     title3: {
         fontSize: 25,
         color: 'blue',
@@ -114,12 +107,34 @@ const style = StyleSheet.create({
         fontWeight: '800',
         textDecorationLine: 'underline'
     },
+    containerSubTitle1: {
+        //backgroundColor:'blue',
+        width,
+        justifyContent: 'center',
+        alignItems: 'flex-start',
+        height: 100,
+        marginTop: -66,
+        top: 40,
+        position: 'relative'
+        //margin: 12, width, alignItems: 'flex-end', top: -10, position: 'absolute'
+    },
+    containerSubTitle2: {
+        //backgroundColor:'red',
+        width,
+        justifyContent: 'center',
+        alignItems: 'flex-end',
+        height: 100,
+        marginTop: -100,
+        top: 40,
+        position: 'relative',
+        //margin: 12, width, alignItems: 'flex-end', top: -10, position: 'absolute'
+    },
     btnDiccionario: {
         backgroundColor: '#fff',
         borderColor:'#0F8131',
         borderWidth:2,
-        width: 85,
-        height: 85,
+        width: 70,
+        height: 70,
         borderRadius: 100,
         justifyContent: 'center',
         alignItems: 'center',
@@ -134,8 +149,8 @@ const style = StyleSheet.create({
         elevation: 10,
       },
       iconoBtn: {
-        width: '78%',
-        height: '78%'
+        width: '60%',
+        height: '60%'
       },
 
 });
